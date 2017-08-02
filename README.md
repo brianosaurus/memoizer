@@ -17,9 +17,9 @@ class Foo < ActiveRecord::Base
   memoize :some_computed_value
 end
 
-# That's all you have to do to make something memoizable. You can memoize scopes, active_record associations, computed values, and db columns
+# That's it!
 
-# To save it simply call
+# To save it call
 obj.memoize # this will use sidekiq
 
 obj.memoize_synchronously # this will memoize in situ
@@ -31,7 +31,7 @@ obj.memory_at(state)
 
 ## Postgres integration
 
-This concern comes with an active record migration that will create the memories table. The table uses the postgres jsonb datatype. Some documentation on that data type can be found here: [jsonb](https://github.com/LendStreet/lendstreet.com/blob/master/Gemfile).
+This concern comes with an active record migration that will create the memories table. The table uses the postgres jsonb datatype. Some documentation on that data type can be found here: [jsonb](https://www.postgresql.org/docs/9.3/static/functions-json.html).
 
 An example of a query that grabs a memory might look like:
 
