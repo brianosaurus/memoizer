@@ -2,6 +2,13 @@
 
 An ActiveRecord::Concern that will save your object (both computed and non-computed values) to a json blob. You can lock and recall previous states of the object just as it existed at the time you memoized it.
 
+Then an object is locked the values returned from memoized methods, scopes, and attribues will be from the json blob. 
+Therefore, you can rewind an object to a previous state and view it as if it were a regular ActiveRecord object. 
+
+## NOTE
+
+This is a work in progress and needs to be made into a gem. It is wholly unfinished at the moment.
+
 ## How to use the memoizer
 
 ```rb
@@ -52,4 +59,12 @@ SELECT user.id,
 
 Note the arrow (->) syntax in the select clause. This peers into the json blob that contains the user's state the last time this record was memoized.
 
+
+## Active Admin integration
+
+The memoized and locked objects play nice with ActiveAdmin so that attributes appear correctly as booleans etc...
+
+## Rails routing integration
+
+When using a route helper, memoized objects are able to appear as a regular active record object so that routes generate correctly.
 
