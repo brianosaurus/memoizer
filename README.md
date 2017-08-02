@@ -9,16 +9,20 @@ This is a work in progress and needs to be made into a gem. It is unfinished at 
 ## How to use the memoizer
 
 ```rb
-class Foo < ActiveRecord::Base
+class Address < ActiveRecord::Base
   include Memoizable
 
-  # Now, simply tell memoize which scopes, associations, or instance methods to memoize
-  memoize :contract, :borrower
+  has_many :rooms
+
+  # Now, tell the memoizer which scopes, associations, or instance methods to memoize
+  memoize :rooms
 
   def some_computed_value
     1 + 23
   end
   memoize :some_computed_value
+
+  # NOTE: All attributes are memoized automatically
 end
 
 # That's it!
