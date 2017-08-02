@@ -2,9 +2,6 @@
 
 An ActiveRecord::Concern that will save your object's computed values, non-computed values, active record associations, and scopes to a json blob. You can lock and recall previous states of the object just as it existed at the time you memoized it.
 
-When an object is locked the values returned from memoized methods, scopes, associations, and attribues will be from the json blob. 
-Therefore, you can rewind an object to a previous state and view it as if it were a regular ActiveRecord object. 
-
 ## NOTE
 
 This is a work in progress and needs to be made into a gem. It is unfinished at the moment.
