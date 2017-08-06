@@ -47,7 +47,7 @@ An example of a query that grabs a memory might look like:
 SELECT user.id,
   memory.values->'current_balance' as balance,
   memory.values->'last_transaction_at' as last_transaction_at,
-  memory.values->'last_transaction_status' as last_transaciton_status
+  memory.values->'last_transaction_status' as last_transaction_status
   FROM users as user
     JOIN (
       SELECT memories.values AS values, memories.id AS id, memories.memoizable_id AS memoizable_id
